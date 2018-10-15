@@ -1,0 +1,212 @@
+/*******************************/
+/* Properties of the help page */
+/*******************************/
+
+body
+{
+	width:60vw;
+	height:95vh;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #f1f1f1;
+	padding-top: 20px;
+	font-family: 'PT Sans Narrow',sans-serif;
+	font-weight: normal;
+}
+
+h1
+{
+	color: black;
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+nav {
+	background-color: #fff;
+	border: 1px solid #dedede;
+	border-radius: 4px;
+	box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
+	color: #888;
+	display: block;
+	margin: 30px 0px 20px 0px;
+	overflow: hidden;
+	width: 99%
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+}
+
+	nav ul li {
+		display: inline-block;
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+		width: 16%;
+		text-align: center;
+		
+		-webkit-transition: all 0.2s;
+		-moz-transition: all 0.2s;
+		-ms-transition: all 0.2s;
+		-o-transition: all 0.2s;
+		transition: all 0.2s; 
+
+	}
+
+	nav > ul > li:hover {
+		background-color: #39BBF0;
+	}
+
+	nav > ul > li:hover a {
+		color: white;
+	}
+	
+		nav > ul > li > a {
+			color: #39BBF0;
+			display: block;
+			line-height: 56px;
+			text-decoration: none;
+			font-weight: bold;
+		}
+
+
+
+.section
+{
+	width: 99%;
+	background-color: white;
+	border: 1px solid #dedede;
+	padding-top: 5px;
+	padding-bottom: 15px;
+	margin-top: 5px;
+	margin-bottom: 20px;
+}
+
+.section h2
+{
+	margin-top: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.section p
+{
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.section li
+{
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 10px;
+}
+
+.section table
+{
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.section td
+{
+	vertical-align: middle;
+}
+
+.section h4
+{
+	padding-left: 10px;
+	padding-right: 0px;
+}
+
+
+.section h2 span{
+	position: relative;
+	float: right;
+	color: #39BBF0;
+}
+
+.section h2 span a:link{ text-decoration:none; color:#39BBF0; }
+.section h2 span a:visited { text-decoration:none; color:#39BBF0;}
+.section h2 span a:active { text-decoration:none; color:#39BBF0;}
+.section h2 span a:hover { text-decoration:none; color:#39BBF0; }
+
+
+
+
+.centerImage
+{
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    border: 1px solid #39BBF0;
+}
+
+.reduceImage_50
+{
+	width: 50%;
+}
+
+.reduceImage_35
+{
+	width: 35%;
+}
+
+.reduceImage_25
+{
+	width: 25%;
+}
+
+.reduceImage_15
+{
+	width: 15%;
+}
+
+.button
+{
+	height: 2em;
+	border: 2px solid #39BBF0;
+	margin-right: 20px;
+}
+
+.button-left
+{
+	height: 2em;
+	border: 2px solid #39BBF0;
+	margin-right: 0px;
+}
+
+.button-slider
+{
+	height: 1em;
+	border: 2px solid #39BBF0;
+	margin-right: 0px;
+}
+
+.italic
+{
+	font-style: italic;
+}
+
+
+#logos
+{
+
+	text-align: center;
+	width: 50%;
+	margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+
+.logo
+{
+	border: 1px solid black;
+	width: 20%;
+	margin-right: 15px;
+}

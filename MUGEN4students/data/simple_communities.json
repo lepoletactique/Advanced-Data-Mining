@@ -1,0 +1,174 @@
+{
+	"directed": false,
+	"graph": [],
+	"multigraph": false,
+	"nodes": [
+	  {
+		"id": "n0",
+		"label": "n0",
+		"x": 0,
+		"y": 0,
+		"size": 1,
+		"color": "#F0141E",
+		"representative": "Adam Warlock.jpg"
+	  },
+	  {
+		"id": "n1",
+		"label": "n1",
+		"x": 10,
+		"y": 10.5,
+		"size": 1,
+		"color": "#F0141E",
+		"representative": "Amadeus Cho.jpg"
+	  },
+	  {
+		"id": "n2",
+		"label": "n2",
+		"x": 10,
+		"y": 10.2,
+		"size": 1,
+		"color": "#F0141E",
+		"representative": "Amazon.jpg"
+	  },
+	  {
+		"id": "n3",
+		"label": "n3",
+		"x": 10,
+		"y": 10.3,
+		"size": 1,
+		"color": "#F0141E",
+		"representative": "Angel.jpg"
+	  },
+	  {
+		"id": "n4",
+		"label": "n4",
+		"x": 50.0,
+		"y": 10.8,
+		"size": 1,
+		"color": "#F0141E",
+		"representative": "Anole.jpg"
+	  },
+	  {
+		"id": "n5",
+		"label": "n5",
+		"x": 10.1,
+		"y": 10.6,
+		"size": 1,
+		"color": "#F0141E",
+		"representative": "Apocalypse.jpg"
+	  },
+	  {
+		"id": "n6",
+		"label": "n6",
+		"x": 0,
+		"y": 1,
+		"size": 1,
+		"color": "#F0141E",
+		"representative": "Ares.jpg"
+	  },
+	  {
+		"id": "n7",
+		"label": "n7",
+		"x": 0,
+		"y": 0,
+		"size": 1,
+		"color": "#F0141E",
+		"representative": "Adam Warlock.jpg"
+	  },
+	  {
+		"id": "n8",
+		"label": "n8",
+		"x": 20,
+		"y": 10.5,
+		"size": 1,
+		"color": "#F0141E",
+		"representative": "Amadeus Cho.jpg"
+	  }	  
+	],
+	"edges": [
+	  {
+		"id": "e1",
+		"source": "n0",
+		"target": "n1",
+		"weight": "1.0"
+	  },
+	  {
+		"id": "e2",
+		"source": "n1",
+		"target": "n2",
+		"weight": "1.0"
+	  },
+	  {
+		"id": "e3",
+		"source": "n1",
+		"target": "n3",
+		"weight": "1.0"
+	  },
+	  {
+		"id": "e4",
+		"source": "n1",
+		"target": "n4",
+		"weight": "1.0"
+	  },
+	  {
+		"id": "e5",
+		"source": "n2",
+		"target": "n3",
+		"weight": "1.0"
+	  },
+	  {
+		"id": "e6",
+		"source": "n2",
+		"target": "n4",
+		"weight": "1.0"
+	  },
+	  {
+		"id": "e7",
+		"source": "n3",
+		"target": "n4",
+		"weight": "1.0"
+	  },
+	  {
+		"id": "e8",
+		"source": "n0",
+		"target": "n5",
+		"weight": "1.0"
+	  },
+	  {
+		"id": "e9",
+		"source": "n5",
+		"target": "n6",
+		"weight": "1.0"
+	  },
+	  {
+		"id": "e10",
+		"source": "n5",
+		"target": "n7",
+		"weight": "1.0"
+	  },
+	  {
+		"id": "e11",
+		"source": "n5",
+		"target": "n8",
+		"weight": "1.0"
+	  },
+	  {
+		"id": "e12",
+		"source": "n6",
+		"target": "n7",
+		"weight": "1.0"
+	  },
+	  {
+		"id": "e13",
+		"source": "n6",
+		"target": "n8",
+		"weight": "1.0"
+	  },
+	  {
+		"id": "e14",
+		"source": "n7",
+		"target": "n8",
+		"weight": "1.0"
+	  }
+	]
+}

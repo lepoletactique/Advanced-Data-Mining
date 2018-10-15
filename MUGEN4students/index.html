@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		
+		<!-- Title -->
+		<title>MUGEN: Marvel Universe Graph ExploratioN</title>
+		
+		<!-- Style sheet -->
+		<link href="style/graph.css" rel="stylesheet" />
+
+		<!-- JavaScript -->
+		<script src="script/linkurious/sigma.min.js"></script>
+		<script src="script/linkurious/plugins.min.js"></script>
+
+		<script src="script/plotly/plotly-latest.min.js"></script>
+		<script src="script/mugen.js"></script>
+
+	</head>
+
+
+	<body onload="on_load();">
+
+			<!-- Splash screen 
+			<div id="splashscreen">
+				<div id="splashscreen_whole">
+					<h2 id="splashscreen_text"> Welcome to MUGEN <br/> Marvel Universe Graph ExploratioN</h2>
+					<img id="splashscreen_image" src="images/mugen_logo.jpeg" onclick="splashscreenOnClick()" /> <br/>
+				</div>
+			</div>
+			-->
+
+			<!-- Main part of the page -->
+			<div id="wholePanel">
+				<!-- Informations list -->
+				<div id="infobox">
+
+					<!-- Controls buttons  for visualisation -->
+					<div id="controls">
+						<br>
+						<!-- Change node style button -->
+						<button class="buttonStyle" id="changeNodeStyles" onclick="changeNodeStyles()" title="Change node styles"><img id="changeNodeStylesImage" class="buttonImage" src="images/node_style.png" /></button>
+						<!-- Male/female button -->
+						<button class="buttonStyle" id="maleFemaleHighlight" onclick="maleFemaleHighlight()" title="Male/female highlight"><img id="maleFemaleHighlight" class="buttonImage" src="images/fe_male.png" /></button>
+						<!-- Show/Hide images button -->
+						<button class="buttonStyle" id="showHideEdges" onclick="showHideEdges()" title="Show/Hide edges"><img id="showHideEdgesImage" class="buttonImage" src="images/hide_edges.png" /></button>
+						<br/>
+						<!-- Show/Hide edges button -->
+						<button class="buttonStyle" id="showHideImages" onclick="showHideImages()" title="Show/Hide images"><img id="showHideImagesImage" class="buttonImage" src="images/show_image.png"/></button>
+						<!-- Fruchterman-Reingold button -->
+						<button class="buttonStyle" id="frLayout" onclick="frLayout()" title="Layout graph (Fruchterman-Reingold)"><img class="buttonImage" src="images/layout_fr.png" /></button>
+						<!-- Force-Link button -->
+						<button class="buttonStyle" id="flLayout" onclick="flLayout()" title="Layout graph (Force Link)"><img class="buttonImage" src="images/layout_fl.png" /></button>
+						<br/>
+						<!-- Highest degree -->
+						<button class="buttonStyle" id="highestDegreeNodes" onclick="highestDegreeNodes()" title="Highest Degree Nodes"><img class="buttonImage" src="images/degrees.png" /></button>
+						<!-- HITS algorithm -->
+						<button class="buttonStyle" id="hitsAlgorithm" onclick="hitsAlgorithm()" title="HITS algorithm"><img class="buttonImage" src="images/1nodes.png" /></button>
+						<!-- Louvain clustering -->
+						<button class="buttonStyle" id="louvainClustering" onclick="louvainClustering()" title="Louvain Clustering"><img class="buttonImage" src="images/louvain.png" /></button>
+						<br/>
+						<!-- Newman-Girvan clustering -->	
+						<button class="buttonStyle" id="newmanGirvanClustering" onclick="newmanGirvanClustering()" title="Newman-Girvan Clustering"><img class="buttonImage" src="images/1edge.png" /></button>	
+						<!-- Test button -->
+						<button class="buttonStyle" id="helpButton" onclick="test()" title="test"><img class="buttonImage" src="images/test.png" /></button>
+						<!-- Help button -->
+						<button class="buttonStyle" id="helpButton" onclick="help()" title="Help"><img class="buttonImage" src="images/help.png" /></button>
+						<br/><br/>
+						<!-- Slider -->
+						<label for="nodeSizeSlider">Node Size</label>
+						<input id="nodeSizeSlider" type="range" min="1" max="5" step="1" value="1" ng-model="data.sizevalue" onchange="changeNodeSize()"/>
+						<output id="nodeSize">1</output>
+					</div>
+
+					<!-- Node informations -->
+					<div id="tabView">
+						<div id="tabs">
+							<button id="nodeTab" class="tab selectedTab" onclick="changeTab(&quot;nodeTab&quot;)" title="Current Node">
+								<img class="buttonImage" src="images/current_node.png" />
+							</button>
+							<button id="searchTab" class="tab nonSelectedTab" onclick="changeTab(&quot;searchTab&quot;)" title="Search">
+								<img class="buttonImage" src="images/search.png" />
+							</button>
+							<button id="shortestPathTab" class="tab nonSelectedTab" onclick="changeTab(&quot;shortestPathTab&quot;)" title="Shortest Path">
+								<img class="buttonImage" src="images/shoretst_path.png" />
+							</button>
+							<button id="edgeDistributionTab" class="tab nonSelectedTab" onclick="changeTab(&quot;edgeDistributionTab&quot;)" title="Edge Distribution">
+								<img class="buttonImage" src="images/edge_chart.png" />
+							</button>
+						</div>
+						<div id="tabsContent">
+							<!-- Current node tabContent -->
+							<div id="nodeTabContent" class="tabContent selectedContent">
+								<p id="selectedNode">Click on a node to show its data</p>
+								<div id="nodesInfo" hidden="true">
+									<div id="selectedImage"></div>
+									<div id="neighbours">Neighbours:<ul id="neighboursList"></ul></div>
+								</div>
+							</div>
+							<!-- Search tabContent -->
+							<div id="searchTabContent" class="tabContent nonSelectedContent"></div>
+							<!-- Shortest Path tabContent -->
+							<div id="shortestPathTabContent" class="tabContent nonSelectedContent"></div>
+							<!-- Edge Distribution tabContent -->
+							<div id="edgeDistributionTabContent" class="tabContent nonSelectedContent"></div>
+						</div>
+					</div>
+
+				</div>
+
+			<!-- Graph area -->
+			<div id="graph-container">
+				<!-- Graph -->
+				<div id="graph"></div>
+				<!-- Current node thumbnail -->
+				<div id="currentNode"></div>
+			</div>
+
+		</div>
+	</body>
+</html>

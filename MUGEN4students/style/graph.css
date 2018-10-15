@@ -1,0 +1,381 @@
+/* Properties of the entire application */
+body
+{
+	height: 100%;
+	margin:auto;
+	background-color: #f1f1f1;
+}
+
+#splashscreen
+{
+	position:absolute;
+	top:0;
+	left:0;
+    text-align: center;
+    width:100vw;
+    height:100vh;
+    background-color:white;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+}
+
+#splashscreen_whole
+{
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+#splashscreen_image
+{
+	height:50vh;
+	margin-bottom: 50px;
+	cursor: pointer;
+}
+
+#splashscreen_text
+{
+	font-family: 'PT Sans Narrow',sans-serif;
+	font-weight: normal;
+	/*text-transform: uppercase;*/
+	color: #F0141E;	
+	font-size: 200%;
+	margin-bottom: 50px;
+}
+
+#splashscreen_button
+{
+	font-family: 'PT Sans Narrow',sans-serif;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: center;
+	color: black;
+	background-color: #F0141E;
+    border: none;
+    padding: 15px 32px;
+}
+
+/* Whole panel */
+#wholePanel
+{
+	width:80%;
+	height:95vh;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+/* Graph panel */
+#graph-container
+{
+	display:block;
+	position: relative;
+	float: left;
+	width: 72%;
+	height: 100%;
+	border: 0px solid black;
+	margin-top:25px;
+	background-color: #ffffff;
+}
+
+#graph
+{
+	display:block;
+	width: 98%;
+	height: 98%;
+	position: relative;
+	z-index: 1;
+	padding: 5px;
+	text-align: left;
+}
+
+#graph canvas
+{
+	height: 100%;
+	width: 100%;
+}
+
+#rollUp
+{
+	position: absolute;
+    top: 10px;
+    left: 10px;
+    height: 32px;
+    width: 32px;
+    z-index: 2;
+    padding: 0px;
+    border: 2px solid #F0141E;
+    background-color: white;
+}
+
+.buttonStyle
+{
+	height: 60px;
+    width: 60px;
+    padding: 0px;
+    border: 2px solid #F0141E;
+    background-color: white;
+}
+
+.buttonImage
+{
+	height: 100%;
+	width: 100%;
+}
+
+#currentNode
+{
+	height: 0px;
+}
+
+#miniCurrentImage
+{
+	width: auto;
+	max-height: 150px;
+	margin-top: -150px;
+	margin-right: 15px;
+	float: right;
+	position: relative;
+	z-index: 2;
+}
+
+/* Properties of the tabs menu */
+#infobox
+{
+	display: block;
+	margin-top:25px;
+	float: right;
+	width: 25%;
+	height: 99%;
+	border: 0px solid black;
+	background-color: #ffffff;
+	padding-top: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
+
+}
+
+#controls
+{
+	border: 1px solid #F0141E;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
+	text-align: center;
+	color: #F0141E;
+	font-weight: bold;
+	font-family: 'PT Sans Narrow',sans-serif;
+	margin-bottom: 5px;
+	position: relative;
+	bottom: 0px;
+}
+
+#controls input
+{
+	margin-top: 20px;
+}
+
+
+#navButtons
+{
+	border: 1px solid #F0141E;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+#tabView
+{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
+	text-align: center;
+	font-weight: bold;
+	font-family: 'PT Sans Narrow',sans-serif;
+	margin-bottom: 20px;
+}
+
+#tabs
+{
+
+}
+
+.tab
+{
+	display: inline-block;
+	padding: 3px;
+	border: 1px solid #F0141E;
+	cursor: pointer;
+	width: 23%;
+}
+
+.nonSelectedTab
+{
+	background: #ffffff;
+	border-bottom: 1px #F0141E solid;
+
+}
+
+.selectedTab
+{
+	background: #ffffff;
+	border-bottom: 0px #F0141E solid;
+
+}
+
+.tabsContent
+{
+	display: block;
+}
+
+.tabContent
+{
+	background-color: #ffffff;
+	margin-top: -1px;
+	padding: 20px 5px 5px 5px ;
+	border-left: 1px solid #F0141E;
+	border-right: 1px solid #F0141E;
+	border-bottom: 1px solid #F0141E;
+	overflow-x: auto;
+	overflow-y: auto;
+}
+
+
+.selectedContent
+{
+	display: block;
+}
+
+.nonSelectedContent
+{
+	display: none;
+}
+
+/* Properties of the information list */
+#miniSelectedImage
+{
+	width: 70%;
+	cursor: pointer;
+}
+
+#zoomMessage
+{
+	font-style: italic;
+}
+
+#neighboursList
+{
+	list-style: none;
+	cursor: default;
+}
+
+#neighboursList a
+{
+	cursor: default;
+}
+
+#neighboursList li
+{
+	display: inline;
+	position: relative;
+	margin: 3px;
+}
+
+.neighbourImage
+{
+	width: 25%;
+	vertical-align: top;
+	margin-bottom: 4px;
+}
+
+#neighboursList a .neighbourImageZoom
+{
+	display: none;
+}
+
+#neighboursList a:hover .neighbourImageZoom
+{
+	display: block;
+	position: absolute;
+	top: -33px;
+	left: -45px;
+	z-index: 1;
+	cursor: pointer;
+}
+
+#neighboursList a .neighbourImageZoom
+{
+	width: 150%;
+}
+
+/* Properties of the logfile */
+#logfile
+{
+	list-style: none;
+}
+
+#currentLogNode
+{
+	font-weight: bold;
+	font-style: italic;
+}
+
+.logImage
+{
+	width: 25%;
+	cursor: pointer;
+}
+
+#currentLogImage
+{
+	box-shadow: 8px 8px 12px #555; 
+	cursor: default;
+}
+
+/* Properties of the help page */
+h1
+{
+	color: #FFFFFF;
+	text-align: center;
+}
+
+#menu
+{
+	margin-left: 15px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding: 10px;
+	background-color: #D3D3D3;
+	width: 8%;
+}
+
+.section
+{
+	width: 100%;
+	background-color: #FFFFFF;
+	padding: 2px;
+	padding-left: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.centerImage
+{
+	display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.reduceImage
+{
+	width: 35%;
+}
+
+.italic
+{
+	font-style: italic;
+}
