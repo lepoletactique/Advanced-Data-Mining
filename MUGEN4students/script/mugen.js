@@ -2,7 +2,7 @@
 // VARIABLES
 /*****************************************************************************************/
 
-var graphURL = "./data/marvel_degree_thresh_200.json";
+var graphURL = "./data/mu_128.json";
 //var graphURL = "./data/simple_communities.json";
 var imagePath  = "./data/images/";	
 
@@ -407,6 +407,7 @@ function maleFemaleHighlight()
 	{
 			// Change the style of the nodes
 			sig.graph.nodes().forEach(function(n) { 
+				console.log(n)
 				if (n.sex=="M")//blue for male
 				{
 					n.color = "#0000FF"; 
