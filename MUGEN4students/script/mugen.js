@@ -722,6 +722,40 @@ function pruneGraph() {
  */
 function highestDegreeNodes() {
 	//TODO
+	var listofEdgesSourcesAndTargets=[]
+	sig.graph.edges().forEach(function(e){
+		listofEdgesSourcesAndTargets.push(e.target)
+		listofEdgesSourcesAndTargets.push(e.source)
+	})
+	var listNodesAndDegrees=[]
+	var names=[]
+	sig.graph.nodes().forEach(function(n){
+		var count = 0;
+		for(var i = 0; i < listofEdgesSourcesAndTargets.length; ++i){
+			if(listofEdgesSourcesAndTargets[i] == n.id)
+				count++;
+		}
+		listNodesAndDegrees.push({"value":count,"id":n.id})
+		names.push("\n"+n.label)
+	})
+	listNodesAndDegrees.sort(function (a, b) {
+		return b.value - a.value;
+	  });
+	console.log(listNodesAndDegrees)
+	sig.graph.nodes().forEach(function (node) {
+		node.color = "black";
+	});
+	for(var i=0;i<10;i++){
+		console.log(listNodesAndDegrees[i].id)
+		sig.graph.nodes(listNodesAndDegrees[i].id).color = "red";
+	}
+	
+	// Refresh sigma renderers:
+	sig.refresh({
+		skipIndexation: true
+	});
+
+	alert("The 10 most important marvel characters are the following \n"+names.slice(0,10))
 }
 
 
