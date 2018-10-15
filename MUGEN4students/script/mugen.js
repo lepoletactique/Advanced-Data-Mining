@@ -1,7 +1,7 @@
 /*****************************************************************************************/
 // VARIABLES
 /*****************************************************************************************/
-
+var MIN_EDGE_WEIGHT = 50; //DECLARING VAR FOR PRUNEGRAPH
 var graphURL = "./data/mu_128.json";
 //var graphURL = "./data/simple_communities.json";
 var imagePath = "./data/images/";
@@ -43,6 +43,7 @@ var sig = null;
  * Function that initialize a sigma instance and load the graph 
  */
 function on_load() {
+
 	// Add edge presence check method
 	sigma.classes.graph.addMethod('is_edge', function (n1, n2) {
 		return this.allNeighborsIndex[n1][n2] != null;
@@ -112,7 +113,8 @@ function on_load() {
 			touchEnabled: false
 		}
 	});
-
+	//Calling PruneGraph
+	pruneGraph()
 	// Load the graph file
 	var xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange = function () {
@@ -580,7 +582,7 @@ function getNeighbours(sig, nodeId) {
 				if (n.id == e.target) {
 					console.log(n.label)
 					neighbours.push(n)
-					
+
 				}
 
 			})
@@ -589,7 +591,7 @@ function getNeighbours(sig, nodeId) {
 
 		//TODO
 	})
-	
+
 	sig.refresh();
 	return neighbours;
 };
@@ -687,7 +689,27 @@ function pruneGraph() {
 	console.log("Initial graph number of edges = " + sig.graph.edges().length);
 
 	// TODO
+	sig.graph.edges().forEach(function (e) {
+		if (e.weight < MIN_EDGE_WEIGHT) {
+			sig.graph.dropEdge(e.id)
 
+		}
+	})
+	var listofExistingTargetAndSourcesAfterDropEdge=[]
+		sig.graph.edges().forEach(function (e) {
+			if (!(listofExistingTargetAndSourcesAfterDropEdge.includes(e.source))){
+				listofExistingTargetAndSourcesAfterDropEdge.push(e.source)
+			};
+			if (!(listofExistingTargetAndSourcesAfterDropEdge.includes(e.target))){
+				listofExistingTargetAndSourcesAfterDropEdge.push(e.target)
+			}
+		})
+	console.log(listofExistingTargetAndSourcesAfterDropEdge)
+	sig.graph.nodes().forEach(function(n){
+		if (!(listofExistingTargetAndSourcesAfterDropEdge.includes(n.id))){
+			sig.graph.dropNode(n.id)
+		}
+	})
 	// Notification
 	console.log("Pruned graph number of nodes = " + sig.graph.nodes().length);
 	console.log("Pruned graph number of edges = " + sig.graph.edges().length);
