@@ -6,7 +6,7 @@ var graphURL = "./data/mu_128.json";
 //var graphURL = "./data/simple_communities.json";
 var imagePath = "./data/images/";
 
-// Graph object 
+// Graph object
 var currentGraph = null;
 
 // Buttons variable
@@ -15,7 +15,7 @@ var displayImage = false;
 var blackNodes = false;
 var MFNodes = false;
 
-// Default color of the nodes 
+// Default color of the nodes
 var defaultColor = "#F0141E";
 
 // Camera animation parameters
@@ -24,7 +24,7 @@ var animDuration = 1000;
 var minNodeSize_ = 2;
 var maxNodeSize_ = 20;
 
-// Neigbours 
+// Neigbours
 var neighbours = [];
 var current_Node;
 
@@ -39,8 +39,8 @@ var sig = null;
 /*****************************************************************************************/
 // ON LOAD
 /*****************************************************************************************/
-/** 
- * Function that initialize a sigma instance and load the graph 
+/**
+ * Function that initialize a sigma instance and load the graph
  */
 function on_load() {
 
@@ -132,7 +132,7 @@ function on_load() {
 			// Initialise graph
 			initListener();
 
-			// Prune graph - remove edges with weight < 
+			// Prune graph - remove edges with weight <
 			pruneGraph();
 
 			// Display graph
@@ -151,7 +151,7 @@ function on_load() {
 /*****************************************************************************************/
 // FUNCTIONS
 /*****************************************************************************************/
-/** 
+/**
  * Function to initialize the event listeners
  *
  */
@@ -209,8 +209,8 @@ function initListener() {
 
 
 
-/** 
- * Function that display a graph that has been load by sigma 
+/**
+ * Function that display a graph that has been load by sigma
  *
  */
 function display() {
@@ -274,7 +274,7 @@ function display() {
 
 
 
-/** 
+/**
  * Function to change the colors and shapes of the nodes
  *
  */
@@ -296,7 +296,7 @@ function changeNodeStyles() {
 
 	}
 
-	// Update boolean 
+	// Update boolean
 	blackNodes = !blackNodes;
 
 	// Refresh the display
@@ -305,7 +305,7 @@ function changeNodeStyles() {
 
 
 
-/** 
+/**
  * Function to show or hide the edges of the graph
  *
  */
@@ -335,7 +335,7 @@ function showHideEdges() {
 
 
 
-/** 
+/**
  * Function to display images in the node or hide them
  *
  */
@@ -411,7 +411,7 @@ function maleFemaleHighlight() {
 		});
 	}
 
-	// Update boolean 
+	// Update boolean
 	MFNodes = !MFNodes;
 
 	// Refresh the display
@@ -421,7 +421,7 @@ function maleFemaleHighlight() {
 
 
 
-/** 
+/**
  * Function to run the Fruchterman-Reingold layout algorithm
  *
  */
@@ -440,7 +440,7 @@ function frLayout() {
 
 
 
-/** 
+/**
  * Function to run the Force Link layout algorithm
  *
  */
@@ -462,9 +462,9 @@ function flLayout() {
 
 
 
-/** 
- * Function that open the help page 
- * 
+/**
+ * Function that open the help page
+ *
  */
 function help() {
 	window.open('help.html', '_blank');
@@ -472,9 +472,9 @@ function help() {
 
 
 
-/** 
- * Function to change the node size 
- * 
+/**
+ * Function to change the node size
+ *
  */
 function changeNodeSize() {
 	// Getting the new value
@@ -492,9 +492,9 @@ function changeNodeSize() {
 
 
 
-/** 
+/**
  * Function to select a node
- * 
+ *
  */
 function selectNode(nodeId) {
 	var newSelectedNode;
@@ -544,9 +544,9 @@ function selectNode(nodeId) {
 
 
 
-/** 
+/**
  * Function to deselect the current node
- * 
+ *
  */
 function deselectNode() {
 	// Delete the node information list
@@ -568,9 +568,9 @@ function deselectNode() {
 
 
 
-/** 
+/**
  * Function to get the neighbours of a node
- * 
+ *
  */
 function getNeighbours(sig, nodeId) {
 	var neighboursId = [];
@@ -598,9 +598,9 @@ function getNeighbours(sig, nodeId) {
 
 
 
-/** 
+/**
  * Function to view the current selected image full-sized
- * 
+ *
  */
 function zoomImage(image) {
 	// Get the name of the image
@@ -620,9 +620,9 @@ function zoomImage(image) {
 
 
 
-/** 
+/**
  * Function to change the current displayed tab
- * 
+ *
  */
 function changeTab(newTab) {
 	if (newTab == "shortestPathTab") {
@@ -642,10 +642,10 @@ function changeTab(newTab) {
 
 
 
-/** 
+/**
  * Function to change the current displayed tab
  * https://plot.ly/javascript/box-plots/
- * 
+ *
  */
 function edgeWeightsBoxplot() {
 	var weights = [];
@@ -679,9 +679,9 @@ function edgeWeightsBoxplot() {
 /*****************************************************************************************
 // CLUSTERING
 /*****************************************************************************************
-/** 
+/**
   * Function to prune the graph based on weights
-  * 
+  *
   */
 function pruneGraph() {
 	// Notification
@@ -716,9 +716,9 @@ function pruneGraph() {
 }
 
 
-/** 
+/**
  * Function to get the 10 nodes with the highest degree
- * 
+ *
  */
 function highestDegreeNodes() {
 	//TODO
@@ -749,7 +749,7 @@ function highestDegreeNodes() {
 		console.log(listNodesAndDegrees[i].id)
 		sig.graph.nodes(listNodesAndDegrees[i].id).color = "red";
 	}
-	
+
 	// Refresh sigma renderers:
 	sig.refresh({
 		skipIndexation: true
@@ -759,9 +759,9 @@ function highestDegreeNodes() {
 }
 
 
-/** 
+/**
  * HITS nodes assignation
- * 
+ *
  */
 function hitsAlgorithm() {
 	// The parameter true indicates that the graph is undirected
@@ -795,9 +795,9 @@ function hitsAlgorithm() {
 }
 
 
-/** 
+/**
  * Louvain clustering
- * 
+ *
  */
 function louvainClustering() {
 	//Partie 1
@@ -841,9 +841,9 @@ function louvainClustering() {
 }
 
 
-/** 
- * Compute internal and external densities 
- * 
+/**
+ * Compute internal and external densities
+ *
  */
 function computeDensities(communityMap, nbPartitions) {
 	// Initialise internal density
@@ -890,20 +890,21 @@ function computeDensities(communityMap, nbPartitions) {
 
 
 
-/** 
+/**
  * Newman-Girvan clustering
- * 
+ *
  */
 function newmanGirvanClustering() {
 	var MAX_ITERATIONS = 1;
 	var nb_iterations = 0;
 
-	// Loop 
+	// Loop
 	while (nb_iterations < MAX_ITERATIONS) {
 		// Initialise edge betweeness matrix
 		var nodes = this.sig.graph.nodes();
 		var nb_nodes = sig.graph.nodes().length;
-		var edgesBetweeness = {};
+		var edgesBetweeness = [];
+		var importantEdge = sig.graph.edges().id;
 
 		// Paiwise shortest path
 		for (var i = 0; i < nb_nodes; i++) {
@@ -912,13 +913,15 @@ function newmanGirvanClustering() {
 				var path = sig.graph.astar(nodes[i].id, nodes[j].id, {
 					undirected: true
 				});
-
-				//TODO
+				edgesBetweeness.push(path);
 			}
 		}
 
 		// Get more important edge
-		//TODO
+		console.log(edgesBetweeness);
+		edgesBetweeness.forEach(function(){
+			
+		})
 
 		// Colour it
 		//TODO
@@ -943,9 +946,9 @@ function newmanGirvanClustering() {
 
 
 
-/** 
+/**
  * ShortestPath
- * 
+ *
  */
 function shortestPath() {
 	console.log("Path");
@@ -965,9 +968,9 @@ function shortestPath() {
 /*****************************************************************************************
 // SPLASHSCREEN
 /*****************************************************************************************
-/** 
-  * Function to fade out the splash screen 
-  * 
+/**
+  * Function to fade out the splash screen
+  *
   */
 function splashscreenOnClick() {
 	// Assign splash screen click behaviour
@@ -977,10 +980,10 @@ function splashscreenOnClick() {
 
 
 
-/** 
+/**
  * Function to fade out an element
  * http://www.chrisbuttery.com/articles/fade-in-fade-out-with-javascript/
- * 
+ *
  */
 function fadeOut(el) {
 	el.style.opacity = 1;
